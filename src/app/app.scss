@@ -1,0 +1,514 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+body {
+  line-height: 22px;
+}
+
+// Alert position
+// --------------------------------------------------
+ion-alert.alert-top {
+  align-items: center;
+}
+
+// Text wrap
+// --------------------------------------------------
+ion-label {
+  white-space: normal;
+}
+
+.two-lines {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+// Buttons
+// --------------------------------------------------
+.bottom-absolute {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  padding: 15px 15px calc(5vw + 1vh) 15px;
+  .button {
+    margin: 1.2rem auto;
+    max-width: 360px;
+  }
+}
+
+.button-footer {
+  margin: 0px;
+  height: 70px;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+// Hide border when refresh
+.has-refresher > .scroll-content {
+  border-top: none !important;
+}
+
+.scroll-content {
+  .wrapper {
+    background-color: $background-color;
+    min-height: 100%;
+  }
+}
+
+ion-spinner * {
+  stroke: color($colors, light);
+}
+
+.header-ios .toolbar-background-ios {
+  border-width: 0 !important;
+}
+
+// Item font size
+.item-title {
+  //  font-size: 1.4rem;
+}
+
+.item-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  font-size: 12.5px;
+  ion-icon {
+    vertical-align: text-bottom;
+    margin-left: 5px;
+  }
+}
+
+// Fixes IOS 10.3.1 icons
+.item-img {
+  display: flex;
+  align-items: center;
+}
+
+// Prevent the names of the tabs from disappearing
+.tabbar .tab-button .tab-button-text {
+  display: block;
+}
+
+.tabbar {
+  .tabs-md &,
+  .tabs-ios & {
+    background: white;
+  }
+  justify-content: center;
+  padding-top: 5px;
+  transform: translate3d(0, 0, 0);
+  .tab-button {
+    max-width: 15vw;
+    min-width: 80px; // Prevent the names of the tabs from disappearing
+    .tab-button-text {
+      display: block;
+    }
+  }
+}
+
+// Remove border of icons when screen resolution is big
+.tab-button-icon {
+  overflow: unset;
+}
+
+// Remove the MD drop-shadow on app header
+.header-md::after {
+  display: none;
+}
+
+.icon-wallet,
+.icon-card {
+  width: 35px;
+  height: 35px;
+  border-radius: $icon-border-radius;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  background-size: 103%;
+}
+
+.icon-wallet {
+  background-color: color($colors, primary);
+  padding: 4px;
+}
+
+.icon-card {
+  background-color: #2a3f90;
+}
+
+.big-icon-svg {
+  padding: 10px;
+  .bg {
+    padding: 0 7px;
+    border-radius: $icon-border-radius;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-size: 103%;
+    &.green {
+      background: rgb(1, 209, 162);
+    }
+    &.blue {
+      background: rgb(41, 99, 175);
+    }
+  }
+}
+
+.logo-services {
+  width: 100px;
+}
+
+.icon-services {
+  background-color: none;
+  border-radius: $icon-border-radius;
+  width: 35px;
+  height: 35px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  background-size: 103%;
+}
+
+.custom-icon {
+  color: rgb(169, 169, 169);
+}
+
+.icon-contact {
+  width: 35px;
+}
+
+.box-notification {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  .icon {
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+  &.success {
+    background-color: color($background-colors, success);
+    color: color($colors, success);
+  }
+  &.info {
+    background-color: color($background-colors, info);
+    color: color($colors, info);
+  }
+  &.warning {
+    background-color: color($background-colors, warning);
+    color: color($colors, warning);
+  }
+  &.error {
+    background-color: color($background-colors, danger);
+    color: color($colors, danger);
+  }
+}
+
+.gravatar {
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: $icon-border-radius;
+}
+
+// Compatibility Ionic 1
+.light,
+a.light,
+.stable,
+a.stable {
+  color: color($colors, light);
+}
+
+.calm,
+a.calm {
+  color: color($colors, grey);
+}
+
+.positive,
+a.positive {
+  color: color($colors, primary);
+}
+
+.energized,
+a.energized {
+  color: color($colors, warning);
+}
+
+.assertive,
+a.assertive {
+  color: color($colors, danger);
+}
+
+.balanced,
+a.balanced {
+  color: color($colors, success);
+}
+
+.royal,
+a.royal {
+  color: color($colors, dark);
+}
+
+.text-gray {
+  color: color($colors, grey);
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.wallet-warning {
+  color: color($colors, danger);
+}
+
+.card {
+  padding-top: 1px;
+  width: 92%;
+  padding-bottom: 10px;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin: 20px auto;
+  display: block;
+  border-radius: 3px;
+  background-color: #ffffff;
+  .item-divider {
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    min-height: 48px;
+  }
+  .item-block {
+    padding: 5px 0 0px 24px;
+  }
+  .input-wrapper {
+    padding-bottom: 4px;
+  }
+}
+
+// Set backgrounds transparent so the QR Scanner can be seen behind the app.
+html,
+body,
+.back-transparent,
+ion-app,
+.nav-decor {
+  background: transparent !important;
+}
+
+ion-icon {
+  &[class*='tab-'] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 2rem !important;
+    height: 2rem !important;
+  } // custom icons
+  &[class*='tab-activity'] {
+    mask-image: url(../assets/img/tab-icons/ico-activity.svg);
+  }
+  &[class*='tab-receive'] {
+    mask-image: url(../assets/img/tab-icons/ico-receive.svg);
+  }
+  &[class*='tab-scan'] {
+    mask-image: url(../assets/img/tab-icons/ico-scan.svg);
+    width: 3rem !important;
+  }
+  &[class*='tab-send'] {
+    mask-image: url(../assets/img/tab-icons/ico-send.svg);
+  }
+  &[class*='tab-button-back'] {
+    mask-image: url(../assets/img/button-back.svg);
+  }
+}
+
+.button-standard {
+  width: 90%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  min-height: 57px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 18px;
+  span {
+    @extend .two-lines;
+  }
+}
+
+.button-default {
+  color: white;
+}
+
+.button-secondary {
+  background-color: #ededed;
+  color: black;
+  &:hover,
+  &:focus,
+  &:active {
+    &.button-md,
+    &.button-ios {
+      background-color: #ededed;
+      color: black;
+      box-shadow: none;
+    }
+  }
+  &:active,
+  &.activated {
+    &.button-md,
+    &.button-ios {
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+.btn-transparent {
+  border: 0px !important;
+  background-color: color($colors, secondary);
+  color: color($colors, primary);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.alertDanger {
+  .alert-message {
+    color: color($colors, danger);
+  }
+}
+
+// https://github.com/ionic-team/ionic/pull/14241
+ion-alert .alert-message {
+  overflow-y: auto;
+}
+
+.mdToastAfterHeader {
+  top: $toolbar-md-height;
+}
+
+.iosToastAfterHeader {
+  top: $toolbar-ios-height;
+}
+
+.hide-tabbar {
+  .tabbar {
+    display: none !important;
+  }
+  .fullscreen-tab {
+    .scroll-content {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.header-extend {
+  background: $toolbar-background;
+  height: 180px;
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+}
+
+button.modal-close-button {
+  font-size: 16px;
+  font-weight: 400;
+  ion-icon {
+    font-size: 26px;
+  }
+}
+
+.qr-container {
+  flex-grow: 1;
+  @include center;
+  background: linear-gradient(#ececec, white);
+  .qr-card {
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 7px;
+    transform: translateY(0);
+    margin: 0;
+    padding-bottom: 0;
+    width: 70%;
+    max-width: 293px;
+    box-shadow: none;
+    .aclass {
+      @include center;
+      padding: 5px;
+    }
+    .aclass > img {
+      filter: grayscale(100%);
+      height: 100%;
+      width: 100%;
+      opacity: 0.715;
+    }
+  }
+}
+
+.address-divider {
+  width: 1px;
+  height: 25px;
+  background-color: rgb(227, 227, 227);
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+// Add padding bottom when item has label
+ion-item.with-label.item {
+  padding-bottom: 10px;
+  &.item-ios,
+  &.item-md {
+    .item-inner {
+      border-bottom: 0;
+    }
+  }
+}
+
+// Remove arrowhead from label
+label-tip.warn.no-arrowhead:before {
+  display: none;
+}
+
+.slide-confirm-down {
+  transform: translate(0px, 90px);
+}
+.slide-confirm-slow {
+  transition: transform 0.7s;
+}
+.slide-confirm-fast {
+  transition: transform 0.3s;
+}

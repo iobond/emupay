@@ -1,0 +1,82 @@
+<ion-header class="wallet-details-header">
+  <ion-navbar [navbar-bg]="wallet.color">
+    <ion-buttons left>
+      <button class="modal-close-button" (click)="close()" ion-button>
+        <ion-icon ios="md-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{wallet && wallet.name || ('Receive'|translate)}}</ion-title>
+    <ion-buttons right>
+      <button *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup" (click)="showMoreOptions()" ion-button
+        icon-only>
+        <ion-icon class="horizontal-lg" name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar [navbar-bg]="wallet.color">
+    <div *ngIf="!wallet.balanceHidden && !wallet.scanning && wallet.status" class="wallet-details-header__balance">
+      <span>{{wallet.status && wallet.status.totalBalanceStr}}</span>
+      <ion-icon *ngIf="wallet.status.totalBalanceSat != wallet.status.spendableAmount" ios="ios-timer-outline" md="md-timer"></ion-icon>
+    </div>
+    <div *ngIf="wallet.balanceHidden  && !wallet.scanning" class="wallet-details-header__balance-hidden">
+      <span class="title" translate>[Balance Hidden]</span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <div class="wrapper">
+    <div class="prompt-user-fullscreen-container" *ngIf="wallet && wallet.isComplete() && wallet.needsBackup">
+      <div class="prompt-user">
+        <div class="title-icon">
+          <img src="assets/img/single-folded-content.svg" />
+        </div>
+        <div class="title-info">
+          <span translate>Needs Backup</span>
+        </div>
+        <div class="subtitle-info">
+          <span translate>Before retrieving your wallet address, it's recommended that you first write down your
+            recovery phrase and store it securely so that your wallet can be recovered in the case your device was lost
+            or stolen.</span>
+        </div>
+        <button ion-button class="button-standard" (click)="goToBackup()">
+          {{'Write Down Recovery Phrase' | translate}}
+        </button>
+        <button ion-button class="button-standard" (click)="skipBackup()">
+          {{'Skip' | translate}}
+        </button>
+      </div>
+    </div>
+
+    <div class="qr-container" *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup">
+      <div class="card qr-card" [ngClass]="{'qr-code-bounce': playAnimation}" *ngIf="wallets[0] && address">
+        <ngx-qrcode (click)="showFullAddr()" *ngIf="address" copy-to-clipboard="{{ address }}" hide-toast="true"
+          qrc-value="{{qrAddress}}" qrc-class="aclass" qrc-errorCorrectionLevel="M"></ngx-qrcode>
+      </div>
+    </div>
+
+    <div *ngIf="wallets[0]" class="receive-content">
+      <div *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup" class="address-container">
+        <div class="text-address ellipsis">
+          <!--<img src="assets/img/icon-bitcoin-small.svg" alt="BTC" width="12" />-->
+          <!--<span class="address-divider"></span>-->
+          <div [ngClass]="{'fade-in-out': playAnimation}" (click)="showFullAddr()" class="address-text ellipsis">
+            <!--<span copy-to-clipboard="{{ address }}" hide-toast="true">{{ address }}</span>-->
+            <span>
+              <editable-item [value]="address" readonly></editable-item>
+            </span>
+          </div>
+
+          <button class="new-address-btn" detail-none text-center (click)="setAddress(true)">
+            <span class="new-address" ion-text color="primary" translate>
+              <img [hidden]="loading" class="spin-icon" [ngClass]="{'spin-backwards': playAnimation}" src="assets/img/right.svg"
+                width="16" />
+              <div *ngIf="loading" [ngClass]="{'spin-fast': loading}" class="spinner"></div>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
