@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  emupay:
+    image: 'jadajin/emupay:latest'
+    ports:
+      - "8100:8100"
+    restart: always
+
