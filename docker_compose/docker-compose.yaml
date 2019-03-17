@@ -4,7 +4,9 @@ services:
 
   emupay:
     image: 'jadajin/emupay:latest'
+    command: npm run ionic:serve
     ports:
       - "8100:8100"
+      - "8101:8101"
     restart: always
 

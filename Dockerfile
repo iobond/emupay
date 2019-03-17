@@ -14,15 +14,15 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - \
 && apt-get install -y nodejs
 
 WORKDIR /
-RUN git clone https://github.com/iobond/emupay.git
+RUN git clone -b create_docker https://github.com/iobond/emupay.git
 
 WORKDIR /emupay
 RUN rm -rf package-lock.json
-RUN npm install
+RUN npm install --save logpath
 RUN npm run apply:copay
 RUN npm run ionic:build --prod
 
 EXPOSE 8100
-WORKDIR /emupay
-CMD npm run ionic:serve
+# WORKDIR /emupay
+# CMD npm run ionic:serve
 # Make port 8100 available to the world outside this container
