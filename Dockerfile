@@ -18,7 +18,7 @@ RUN git clone -b create_docker https://github.com/iobond/emupay.git
 
 WORKDIR /emupay
 RUN rm -rf package-lock.json
-RUN npm install --save logpath
+RUN npm install
 RUN npm run apply:copay
 RUN npm run ionic:build --prod
 
