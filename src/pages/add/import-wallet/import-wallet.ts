@@ -106,7 +106,9 @@ export class ImportWalletPage {
       this.processWalletInfo(data.value);
     });
 
-    var arrayRemove = (arr, value) => {
+
+    this.walletTypes = this.shareService.walletTypes;
+    /* var arrayRemove = (arr, value) => {
       return arr.filter((ele) => {
         return ele != value;
       })
@@ -114,7 +116,7 @@ export class ImportWalletPage {
 
     var tempWalletTypes = this.shareService.walletTypes;
 
-    this.walletTypes = arrayRemove(tempWalletTypes, "AIB")
+    this.walletTypes = arrayRemove(tempWalletTypes, "AIB") */
 
   }
 
