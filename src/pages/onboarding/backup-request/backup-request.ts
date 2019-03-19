@@ -4,11 +4,13 @@ import { AlertController, NavController, NavParams } from 'ionic-angular';
 
 // Providers
 import { Logger } from '../../../providers/logger/logger';
+import { PersistenceProvider } from '../../../providers/persistence/persistence';
 import { PopupProvider } from '../../../providers/popup/popup';
 
 // Pages
 import { BackupWarningPage } from '../../backup/backup-warning/backup-warning';
 import { DisclaimerPage } from '../disclaimer/disclaimer';
+import { TabsPage } from '../../tabs/tabs';
 
 @Component({
   selector: 'page-backup-request',
@@ -23,6 +25,7 @@ export class BackupRequestPage {
     public alertCtrl: AlertController,
     private logger: Logger,
     private translate: TranslateService,
+    private persistenceProvider: PersistenceProvider,
     private popupProvider: PopupProvider
   ) {
     this.walletId = this.navParams.get('walletId');
@@ -30,7 +33,7 @@ export class BackupRequestPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: BackupRequestPage');
-    this.doBackupLater();
+    confirm();
   }
 
   public initBackupFlow(): void {
@@ -64,5 +67,12 @@ export class BackupRequestPage {
             this.navCtrl.push(DisclaimerPage);
           });
       });
+  }
+
+  confirm() {
+    this.persistenceProvider.setEmailLawCompliance('accepted');
+    this.persistenceProvider.setDisclaimerAccepted();
+    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.popToRoot({ animate: false });
   }
 }
