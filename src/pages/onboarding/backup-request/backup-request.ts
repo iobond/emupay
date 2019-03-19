@@ -4,7 +4,6 @@ import { AlertController, NavController, NavParams } from 'ionic-angular';
 
 // Providers
 import { Logger } from '../../../providers/logger/logger';
-import { PersistenceProvider } from '../../../providers/persistence/persistence';
 import { PopupProvider } from '../../../providers/popup/popup';
 
 // Pages
@@ -25,7 +24,6 @@ export class BackupRequestPage {
     public alertCtrl: AlertController,
     private logger: Logger,
     private translate: TranslateService,
-    private persistenceProvider: PersistenceProvider,
     private popupProvider: PopupProvider
   ) {
     this.walletId = this.navParams.get('walletId');
