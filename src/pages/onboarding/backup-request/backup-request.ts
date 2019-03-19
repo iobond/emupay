@@ -9,8 +9,8 @@ import { PopupProvider } from '../../../providers/popup/popup';
 
 // Pages
 import { BackupWarningPage } from '../../backup/backup-warning/backup-warning';
-import { DisclaimerPage } from '../disclaimer/disclaimer';
 import { TabsPage } from '../../tabs/tabs';
+import { DisclaimerPage } from '../disclaimer/disclaimer';
 
 @Component({
   selector: 'page-backup-request',
@@ -70,8 +70,6 @@ export class BackupRequestPage {
   }
 
   confirm() {
-    this.persistenceProvider.setEmailLawCompliance('accepted');
-    this.persistenceProvider.setDisclaimerAccepted();
     this.navCtrl.setRoot(TabsPage);
     this.navCtrl.popToRoot({ animate: false });
   }
