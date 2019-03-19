@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController } from 'ionic-angular';
 import { Logger } from '../../providers/logger/logger';
 
-import { TabsPage } from '../tabs/tabs';
+import { BackupRequestPage } from '../backup-request/backup-request';
 
 // providers
 import { ActionSheetProvider } from '../../providers/action-sheet/action-sheet';
@@ -83,11 +83,7 @@ export class OnboardingPage {
       .then(wallet => {
         this.onGoingProcessProvider.clear();
         this.persistenceProvider.setOnboardingCompleted();
-        // this.navCtrl.push(CollectEmailPage, { walletId: wallet.id });
-        this.persistenceProvider.setEmailLawCompliance('accepted');
-        this.persistenceProvider.setDisclaimerAccepted();
-        this.navCtrl.setRoot(TabsPage);
-        this.navCtrl.popToRoot({ animate: false });
+        this.navCtrl.push(BackupRequestPage, { walletId: wallet.id });
       })
       .catch(err => {
         setTimeout(() => {
