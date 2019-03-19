@@ -31,7 +31,7 @@ export class BackupRequestPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: BackupRequestPage');
-    confirm();
+    this.confirm();
   }
 
   public initBackupFlow(): void {
@@ -67,7 +67,7 @@ export class BackupRequestPage {
       });
   }
 
-  confirm() {
+  public confirm(): void {
     this.navCtrl.setRoot(TabsPage);
     this.navCtrl.popToRoot({ animate: false });
   }
