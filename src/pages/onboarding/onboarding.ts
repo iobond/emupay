@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController } from 'ionic-angular';
 import { Logger } from '../../providers/logger/logger';
 
-import { BackupRequestPage } from '../backup-request/backup-request';
+import { BackupRequestPage } from './backup-request/backup-request';
 
 // providers
 import { ActionSheetProvider } from '../../providers/action-sheet/action-sheet';
