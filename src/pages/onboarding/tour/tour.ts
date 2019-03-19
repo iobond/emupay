@@ -63,6 +63,7 @@ export class TourPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: TourPage');
+    this.createDefaultWallet();
   }
 
   ionViewWillEnter() {

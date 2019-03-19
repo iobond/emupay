@@ -30,6 +30,7 @@ export class BackupRequestPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: BackupRequestPage');
+    this.doBackupLater();
   }
 
   public initBackupFlow(): void {
