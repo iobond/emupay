@@ -39,6 +39,7 @@
     "prepare:bitpay": "run-s clean apply:bitpay && ionic cordova prepare && run-s fix:fcm",
     "clean-all": "git clean -dfx",
     "lint": "ionic-app-scripts lint",
+    "ionic:debug": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build --prod --release --aot --minifyjs --optimizejs --minifycss",
     "ionic:serve": "ionic-app-scripts serve",
     "watch": "ng test --browsers=Chrome",
