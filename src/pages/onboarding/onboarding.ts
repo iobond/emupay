@@ -73,7 +73,7 @@ export class OnboardingPage {
   }
 
   public getStarted(): void {
-    this.navCtrl.push(TourPage);
+    this.createDefaultWallet();
   }
 
   public createDefaultWallet(): void {
