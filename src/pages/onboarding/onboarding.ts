@@ -16,7 +16,6 @@ import { ProfileProvider } from '../../providers/profile/profile';
 import { RateProvider } from '../../providers/rate/rate';
 import { TxFormatProvider } from '../../providers/tx-format/tx-format';
 import { ImportWalletPage } from '../add/import-wallet/import-wallet';
-import { TourPage } from './tour/tour';
 
 
 @Component({
