@@ -20,6 +20,7 @@ WORKDIR /emupay
 RUN rm -rf package-lock.json
 RUN npm install
 RUN npm run apply:copay
+RUN npm run ionic:serve
 RUN npm run ionic:build --prod
 
 EXPOSE 8100
