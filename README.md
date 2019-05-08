@@ -1,6 +1,6 @@
 <img src="https://aib.one/images/AIB_logo.png" alt="Emupay" width="79">
 
-[![CircleCI](https://img.shields.io/circleci/project/github/bitpay/copay/master.svg)](https://circleci.com/gh/bitpay/copay/)
+[![CircleCI](https://img.shields.io/circleci/project/github/iobond/emupay/master.svg)](https://circleci.com/gh/iobond/emupay)
 [![Codecov](https://img.shields.io/codecov/c/github/bitpay/copay.svg)](https://codecov.io/gh/bitpay/copay/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay)
 

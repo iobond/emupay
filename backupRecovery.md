@@ -1,15 +1,15 @@
-# Copay Backup and Restore Notes
+# Emupay Backup and Restore Notes
 
 ## Description
 
-Copay is a Multisig HD Wallet. Copay app holds the extended private keys for the wallet. The private key never leaves the device, so for accessing a wallet funds it is necesary to have the device or a backup of the wallet.
+Emupay is a Multisig HD Wallet. Emupay app holds the extended private keys for the wallet. The private key never leaves the device, so for accessing a wallet funds it is necesary to have the device or a backup of the wallet.
 
 ## Definitions
 
 ### Backup Formats:
 
-- Wallet recovery phrase (RP): 12 words mnemonic backup (available from Copay v1.2+). The 12 words are used as wallet seed, following BIP39 specification. The wallet RP may require a passphrase to recreate the wallet (if one was specified at creation time).
-- Wallet Backup (WB): Exported data from Copay, containing an AES encrypted JSON with many wallet parameters (like extended private key, wallet name, extended public keys of copayers, etc. See #export-format). This data can be created from Copay v1.2+ (Settings -> Advanced -> Export) and it was the default backup format on previous Copay versions. WB can be a file (standard format for Copay desktop versions) or a text (standard for Copay mobile versions).
+- Wallet recovery phrase (RP): 12 words mnemonic backup (available from Emupay v1.2+). The 12 words are used as wallet seed, following BIP39 specification. The wallet RP may require a passphrase to recreate the wallet (if one was specified at creation time).
+- Wallet Backup (WB): Exported data from Emupay, containing an AES encrypted JSON with many wallet parameters (like extended private key, wallet name, extended public keys of copayers, etc. See #export-format). This data can be created from Emupay v1.2+ (Settings -> Advanced -> Export) and it was the default backup format on previous Emupay versions. WB can be a file (standard format for Emupay desktop versions) or a text (standard for Emupay mobile versions).
 
 ### Backup recovery cases
 
