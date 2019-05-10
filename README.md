@@ -4,6 +4,9 @@
 [![Codecov](https://img.shields.io/codecov/c/github/bitpay/copay.svg)](https://codecov.io/gh/bitpay/copay/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay)
 
+BROWSER BASE ONLY (Not Production usage)
+
+
 Emupay is a secure bitcoin wallet platform for both desktop and mobile devices. Emupay uses [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
 
 Binary versions of Emupay are available for download at [aib.one](https://aib.one/#download). Emupay Binaries are signed with the key `dev@aib.one` – See the section [`How to Verify Emupay Signatures`](https://github.com/iobond/emupay#how-to-verify-copay-signatures) for details.
