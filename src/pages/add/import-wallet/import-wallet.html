@@ -35,13 +35,13 @@
     <ion-item *ngIf="selectedTab == 'words'">
       <ion-label stacked>{{'Type the recovery phrase (usually 12 words)' | translate}}</ion-label>
       <ion-textarea formControlName="words" [value]="importForm.value.words" autocapitalize="none"></ion-textarea>
-      <!-- <ion-icon class="scanner-icon" name="qr-scanner" item-right (click)="openScanner()"></ion-icon>-->
+      <ion-icon class="scanner-icon" name="qr-scanner" item-right (click)="openScanner()"></ion-icon>
     </ion-item>
 
     <div *ngIf="selectedTab == 'file'">
       <ion-item class="hide-validation" *ngIf="!isSafari && !isCordova">
-        <ion-input class="upload-hidden" type="file" accept="json" [(ngModel)]="formFile" (change)="fileChangeEvent($event)"
-          formControlName="file"></ion-input>
+        <ion-input class="upload-hidden" type="file" accept="json" [(ngModel)]="formFile"
+          (change)="fileChangeEvent($event)" formControlName="file"></ion-input>
         <div item-content class="upload-ui">
           <div class="empty-message">{{'Choose a backup file from your computer' | translate}}&hellip;</div>
           <div class="filled-message">{{prettyFileName}}</div>
@@ -61,8 +61,8 @@
 
     <ion-item *ngIf="selectedTab != 'file'">
       <ion-label stacked>{{'Coin' | translate}}</ion-label>
-      <ion-select [(ngModel)]="defaultWalletType" okText="{{okText}}" cancelText="{{cancelText}}" placeholder="{{'Select a coin' | translate}}"
-        formControlName="coin">
+      <ion-select [(ngModel)]="defaultWalletType" okText="{{okText}}" cancelText="{{cancelText}}"
+        placeholder="{{'Select a coin' | translate}}" formControlName="coin">
         <!-- <ion-option value="btc">Bitcoin (BTC)</ion-option>
         <ion-option value="bch">Bitcoin Cash (BCH)</ion-option>
         <ion-option value="aib">AIB (AIB)</ion-option> -->

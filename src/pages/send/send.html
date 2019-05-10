@@ -10,7 +10,8 @@
   <ion-toolbar *ngIf="wallet" [navbar-bg]="wallet.color">
     <div *ngIf="!wallet.balanceHidden && !wallet.scanning && wallet.status" class="wallet-details-header__balance">
       <span>{{wallet.status && wallet.status.totalBalanceStr}}</span>
-      <ion-icon *ngIf="wallet.status.totalBalanceSat != wallet.status.spendableAmount" ios="ios-timer-outline" md="md-timer"></ion-icon>
+      <ion-icon *ngIf="wallet.status.totalBalanceSat != wallet.status.spendableAmount" ios="ios-timer-outline"
+        md="md-timer"></ion-icon>
     </div>
     <div *ngIf="wallet.balanceHidden  && !wallet.scanning" class="wallet-details-header__balance-hidden">
       <span class="title" translate>[Balance Hidden]</span>
@@ -42,11 +43,13 @@
       <div class="send-header-wrapper">
         <span class="send-heading" translate>Recipient</span>
         <ion-item class="search-wrapper" [ngClass]="{'invalid': invalidAddress && search != ''}">
-          <ion-input placeholder="{{'Search or enter AIB address' | translate}}" [(ngModel)]="search" (ngModelChange)="processInput()"></ion-input>
-          <ion-icon *ngIf="invalidAddress && search != ''" item-end class="backspace-icon" name="backspace" (click)="search = ''"></ion-icon>
-          <!--<ion-icon item-end class="scan-icon" (click)="openScanner()">
+          <ion-input placeholder="{{'Search or enter AIB address' | translate}}" [(ngModel)]="search"
+            (ngModelChange)="processInput()"></ion-input>
+          <ion-icon *ngIf="invalidAddress && search != ''" item-end class="backspace-icon" name="backspace"
+            (click)="search = ''"></ion-icon>
+          <ion-icon item-end class="scan-icon" (click)="openScanner()">
             <img src="assets/img/scan-ico.svg">
-          </ion-icon>-->
+          </ion-icon>
         </ion-item>
       </div>
 
@@ -74,13 +77,13 @@
         </ion-item-divider>
 
         <ion-list>
-          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletBtcList" (click)="goToAmount(wallet)"
-            [ngClass]="{'wallet-disabled': !wallet.isComplete || wallet.needsBackup}">
+          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletBtcList"
+            (click)="goToAmount(wallet)" [ngClass]="{'wallet-disabled': !wallet.isComplete || wallet.needsBackup}">
             <ion-icon class="item-img" item-start>
-              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet-testnet.svg"
-                class="icon-wallet" />
-              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet.svg"
-                class="icon-wallet" />
+              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet-testnet.svg" class="icon-wallet" />
+              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet.svg" class="icon-wallet" />
             </ion-icon>
             <span class="item-title">{{wallet.name}}</span>
             <ion-note class="wallet-warning" *ngIf="!wallet.isComplete" item-end>
@@ -103,12 +106,13 @@
         </ion-item-divider>
 
         <ion-list>
-          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletBchList" (click)="goToAmount(wallet)">
+          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletBchList"
+            (click)="goToAmount(wallet)">
             <ion-icon class="item-img" item-start>
-              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet-testnet.svg"
-                class="icon-wallet" />
-              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet.svg"
-                class="icon-wallet" />
+              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet-testnet.svg" class="icon-wallet" />
+              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet.svg" class="icon-wallet" />
             </ion-icon>
             <span class="item-title">{{wallet.name}}</span>
             <ion-note class="wallet-warning" *ngIf="!wallet.isComplete" item-end>
@@ -131,12 +135,13 @@
         </ion-item-divider>
 
         <ion-list>
-          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletAibList" (click)="goToAmount(wallet)">
+          <button ion-item *ngFor="let wallet of filteredWallets[0] ? filteredWallets : walletAibList"
+            (click)="goToAmount(wallet)">
             <ion-icon class="item-img" item-start>
-              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet-testnet.svg"
-                class="icon-wallet" />
-              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}" src="assets/img/icon-wallet.svg"
-                class="icon-wallet" />
+              <img *ngIf="wallet.network == 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet-testnet.svg" class="icon-wallet" />
+              <img *ngIf="wallet.network != 'testnet'" [ngStyle]="{'background-color': wallet.color}"
+                src="assets/img/icon-wallet.svg" class="icon-wallet" />
             </ion-icon>
             <span class="item-title">{{wallet.name}}</span>
             <ion-note class="wallet-warning" *ngIf="!wallet.isComplete" item-end>
