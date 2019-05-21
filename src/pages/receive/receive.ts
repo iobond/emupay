@@ -15,7 +15,7 @@ import { AmountPage } from '../send/amount/amount';
 import { ActionSheetProvider } from '../../providers/action-sheet/action-sheet';
 import { AddressProvider } from '../../providers/address/address';
 import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
-import { ClipboardProvider } from '../../providers/clipboard/clipboard';
+// import { ClipboardProvider } from '../../providers/clipboard/clipboard';
 import { ExternalLinkProvider } from '../../providers/external-link/external-link';
 import { PlatformProvider } from '../../providers/platform/platform';
 import { ProfileProvider } from '../../providers/profile/profile';
@@ -53,7 +53,7 @@ export class ReceivePage extends WalletTabsChild {
     private bwcErrorProvider: BwcErrorProvider,
     private translate: TranslateService,
     private externalLinkProvider: ExternalLinkProvider,
-    private clipboardProvider: ClipboardProvider,
+    // private clipboardProvider: ClipboardProvider,
     private addressProvider: AddressProvider,
     walletTabsProvider: WalletTabsProvider,
     private platform: Platform
@@ -180,7 +180,7 @@ export class ReceivePage extends WalletTabsChild {
   }
 
   public showFullAddr(): void {
-    this.clipboardProvider.copy(this.address)
+    // this.clipboardProvider.copy(this.address)
     const infoSheet = this.actionSheetProvider.createInfoSheet(
       'address-copied',
       { address: this.address, coin: this.wallet.coin }
