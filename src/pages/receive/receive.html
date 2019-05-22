@@ -62,9 +62,7 @@
           <!--<span class="address-divider"></span>-->
           <div [ngClass]="{'fade-in-out': playAnimation}" (click)="showFullAddr()" class="address-text ellipsis">
             <!-- <span copy-to-clipboard="{{ address }}" hide-toast="true">{{ address }}</span>-->
-            <span copy-to-clipboard="{{ address }}" hide-toast="true">
-              <editable-item [value]="address" readonly></editable-item>
-            </span>
+            <editable-item copy-to-clipboard="{{ address }}" hide-toast="true" [value]="address" readonly></editable-item>
           </div>
 
           <button class="new-address-btn" detail-none text-center (click)="setAddress(true)">

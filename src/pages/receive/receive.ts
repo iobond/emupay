@@ -181,10 +181,10 @@ export class ReceivePage extends WalletTabsChild {
 
   public showFullAddr(): void {
     // this.clipboardProvider.copy(this.address)
-    const infoSheet = this.actionSheetProvider.createInfoSheet(
-      'address-copied',
-      { address: this.address, coin: this.wallet.coin }
-    );
-    infoSheet.present();
+    // const infoSheet = this.actionSheetProvider.createInfoSheet(
+    //   'address-copied',
+    //   { address: this.address, coin: this.wallet.coin }
+    // );
+    // infoSheet.present();
   }
 }
