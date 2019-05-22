@@ -178,10 +178,10 @@ export class ReceivePage extends WalletTabsChild {
   }
 
   public showFullAddr(): void {
-    // const infoSheet = this.actionSheetProvider.createInfoSheet(
-    //   'address-copied',
-    //   { address: this.address, coin: this.wallet.coin }
-    // );
-    // infoSheet.present();
+    const infoSheet = this.actionSheetProvider.createInfoSheet(
+      'address-copied',
+      { address: this.address, coin: this.wallet.coin }
+    );
+    infoSheet.present();
   }
 }
