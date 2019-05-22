@@ -50,7 +50,6 @@
 
     <div class="qr-container" *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup">
       <div class="card qr-card" [ngClass]="{'qr-code-bounce': playAnimation}" *ngIf="wallets[0] && address">
-        <editable-item copy-to-clipboard="{{ address }}" hide-toast="true" [value]="address" readonly></editable-item>
         <ngx-qrcode (click)="showFullAddr()" *ngIf="address" copy-to-clipboard="{{ address }}" hide-toast="true"
           qrc-value="{{qrAddress}}" qrc-class="aclass" qrc-errorCorrectionLevel="M"></ngx-qrcode>
       </div>
@@ -61,9 +60,9 @@
         <div class="text-address ellipsis">
           <!--<img src="assets/img/icon-bitcoin-small.svg" alt="BTC" width="12" />-->
           <!--<span class="address-divider"></span>-->
-          <div [ngClass]="{'fade-in-out': playAnimation}" (click)="showFullAddr()" class="address-text ellipsis">
-            <span copy-to-clipboard="{{ address }}" hide-toast="true">{{ address }}</span>
-            <!-- <editable-item copy-to-clipboard="{{ address }}" hide-toast="true" [value]="address" readonly></editable-item> -->
+          <div [ngClass]="{'fade-in-out': playAnimation}" (click)="" class="address-text ellipsis">
+            <!-- <span copy-to-clipboard="{{ address }}" hide-toast="true">{{ address }}</span>-->
+            <editable-item copy-to-clipboard="{{ address }}" hide-toast="true" [value]="address" readonly></editable-item>
           </div>
 
           <button class="new-address-btn" detail-none text-center (click)="setAddress(true)">
