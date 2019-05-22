@@ -60,7 +60,7 @@
         <div class="text-address ellipsis">
           <!--<img src="assets/img/icon-bitcoin-small.svg" alt="BTC" width="12" />-->
           <!--<span class="address-divider"></span>-->
-          <div [ngClass]="{'fade-in-out': playAnimation}" (click)="" class="address-text ellipsis">
+          <div [ngClass]="{'fade-in-out': playAnimation}" class="address-text ellipsis">
             <!-- <span copy-to-clipboard="{{ address }}" hide-toast="true">{{ address }}</span>-->
             <editable-item copy-to-clipboard="{{ address }}" hide-toast="true" [value]="address" readonly></editable-item>
           </div>
