@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const shell = require('shelljs');
 
-const configDir = process.argv[2] || 'emupay';
+const configDir = process.argv[2] || 'copay';
 const config = require(`./${configDir}/appConfig.json`);
 
 const templates = {
