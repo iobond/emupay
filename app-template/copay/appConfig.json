@@ -12,7 +12,7 @@
   "nameNoSpace": "emupay",
   "nameCase": "Emupay",
   "nameCaseNoSpace": "Emupay",
-  "gitHubRepoName": "copay",
+  "gitHubRepoName": "emupay",
   "gitHubRepoUrl": "git://github.com/iobond/emupay.git",
   "gitHubRepoBugs": "https://github.com/iobond/emupay/issues",
   "disclaimerUrl": "https://aib.one/disclaimer",
@@ -24,7 +24,7 @@
   "windowsAppId": "804636ee-b017-4cad-8719-e58ac97ffa5c",
   "pushSenderId": "1036948132229",
   "description": "A Secure Crypto Wallet",
-  "version": "5.0.4/1.0.1",
+  "version": "1.0.1",
   "androidVersion": "50400000",
   "_extraCSS": null,
   "_enabledExtensions": {
