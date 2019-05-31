@@ -104,7 +104,7 @@ export class LanguageProvider {
   }
 
   private getDefault(): string {
-    return this.languages[8]['isoCode'];
+    return this.languages[0]['isoCode'];
   }
 
   public getCurrent() {
