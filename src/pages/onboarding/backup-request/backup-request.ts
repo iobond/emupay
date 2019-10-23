@@ -8,6 +8,7 @@ import { PopupProvider } from '../../../providers/popup/popup';
 
 // Pages
 import { BackupWarningPage } from '../../backup/backup-warning/backup-warning';
+import { TabsPage } from '../../tabs/tabs';
 import { DisclaimerPage } from '../disclaimer/disclaimer';
 
 @Component({
@@ -30,6 +31,7 @@ export class BackupRequestPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: BackupRequestPage');
+    this.confirm();
   }
 
   public initBackupFlow(): void {
@@ -63,5 +65,10 @@ export class BackupRequestPage {
             this.navCtrl.push(DisclaimerPage);
           });
       });
+  }
+
+  public confirm(): void {
+    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.popToRoot({ animate: false });
   }
 }

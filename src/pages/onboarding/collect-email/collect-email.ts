@@ -52,6 +52,7 @@ export class CollectEmailPage {
 
   ionViewDidLoad() {
     this.logger.info('Loaded: CollectEmailPage');
+    this.skip();
   }
 
   public skip(): void {
