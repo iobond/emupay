@@ -81,7 +81,10 @@ export class ShareService {
            When there is no asset defined in BWS DB, BaseCoin will be used to create the default wallet.
            When BaseCoin is not defined here, default wallet creation will fail
          */
-        if (DefaultAsset && symbols.indexOf(DefaultAsset.toUpperCase())!= -1) {
+        if (DefaultAsset == BaseCoin){
+            this.walletTypes.push((BaseCoin.toUpperCase())); //  BaseCoin if defined is added to wallet Types
+            this.defalutWalletType = BaseCoin.toUpperCase();
+        }else if (DefaultAsset && symbols.indexOf(DefaultAsset.toUpperCase())!= -1) {
             this.defalutWalletType = DefaultAsset;
             this.walletTypes = symbols;
             this.walletTypes.push(BaseCoin.toUpperCase()); // add Base coin to the end of wallet Types

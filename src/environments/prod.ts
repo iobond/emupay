@@ -21,7 +21,7 @@ const env: EnvironmentSchema = {
  */
 
  
-export const DefaultAsset = '9CAT';
+export const DefaultAsset = 'AIB';
 export const BaseCoin = 'AIB';
 export const DefaultWalletServiceUrl = "https://bws.aib.cash/bws/api";
 export default env;
