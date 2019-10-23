@@ -3,7 +3,7 @@ import { BaseCoin, DefaultAsset } from '../environments/prod';
 import { Token } from "../models/services/token.model";
 import { Logger } from '../providers/logger/logger';
 
-import {BwcProvider} from "../providers/bwc/bwc";
+import { BwcProvider } from "../providers/bwc/bwc";
 
 
 @Injectable()
@@ -75,26 +75,27 @@ export class ShareService {
         tokens.map( (token) => {
             symbols.push(token.symbol);
         });
-        /* When DefaultAsset defined here does exist in BWS db, Default Asset will be used to create default wallet
-           When DefaultAsset doesn't exist in BWS db but there are assets defined in BWS db and the first available asset
-           will be used as DefaultAsset to create wallet.
-           When there is no asset defined in BWS DB, BaseCoin will be used to create the default wallet.
-           When BaseCoin is not defined here, default wallet creation will fail
-         */
+        /* 
+            When DefaultAsset defined here does exist in BWS db, Default Asset will be used to create default wallet
+            When DefaultAsset doesn't exist in BWS db but there are assets defined in BWS db and the first available asset
+            will be used as DefaultAsset to create wallet.
+            When there is no asset defined in BWS DB, BaseCoin will be used to create the default wallet.
+            When BaseCoin is not defined here, default wallet creation will fail
+        */
         if (DefaultAsset == BaseCoin){
             this.walletTypes.push((BaseCoin.toUpperCase())); //  BaseCoin if defined is added to wallet Types
             this.defalutWalletType = BaseCoin.toUpperCase();
-        }else if (DefaultAsset && symbols.indexOf(DefaultAsset.toUpperCase())!= -1) {
+        } else if (DefaultAsset && symbols.indexOf(DefaultAsset)!= -1) {
             this.defalutWalletType = DefaultAsset;
             this.walletTypes = symbols;
-            this.walletTypes.push(BaseCoin.toUpperCase()); // add Base coin to the end of wallet Types
+            this.walletTypes.push(BaseCoin); // add Base coin to the end of wallet Types
         } else {
             if (symbols.length > 0) {
                 this.defalutWalletType = symbols[0];
                 this.walletTypes = symbols[0];
             } else {
-                this.walletTypes.push((BaseCoin.toUpperCase())); //  BaseCoin if defined is added to wallet Types
-                this.defalutWalletType = BaseCoin.toUpperCase();
+                this.walletTypes.push((BaseCoin)); //  BaseCoin if defined is added to wallet Types
+                this.defalutWalletType = BaseCoin;
             }
         }
     }
