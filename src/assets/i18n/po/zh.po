@@ -1329,7 +1329,7 @@ msgid "Off"
 msgstr "关闭"
 
 msgid "Ok"
-msgstr "还行"
+msgstr "确认"
 
 msgid "On"
 msgstr "开启"
@@ -1359,10 +1359,10 @@ msgid "Open GitHub Project"
 msgstr "打开 GitHub 项目"
 
 msgid "Open Insight"
-msgstr "开放的洞察力"
+msgstr "打开 Insight"
 
 msgid "Open Translation Community"
-msgstr "开放式翻译社区"
+msgstr "打开翻译社区"
 
 msgid "Open settings"
 msgstr "打开设置"
