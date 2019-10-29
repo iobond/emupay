@@ -286,17 +286,7 @@ export class ScanProvider {
   public toggleCamera(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Toggling camera...');
-      this.qrScanner
-        .useBackCamera()
-        .then(() => {
-          this.frontCameraEnabled = false;
-          return resolve(this.frontCameraEnabled);
-        })
-        .catch(err => {
-          this.logger.error('Scan Provider Error (useBackCamera)', err);
-          return reject(err);
-        });
-      /* if (this.frontCameraEnabled) {
+      if (this.frontCameraEnabled) {
         this.qrScanner
           .useBackCamera()
           .then(() => {
@@ -318,7 +308,7 @@ export class ScanProvider {
             this.logger.error('Scan Provider Error (useFrontCamera)', err);
             return reject(err);
           });
-      } */
+      }
     });
   }
 
