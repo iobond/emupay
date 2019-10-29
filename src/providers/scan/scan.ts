@@ -288,17 +288,6 @@ export class ScanProvider {
       this.logger.info('Toggling camera...');
       if (this.frontCameraEnabled) {
         this.qrScanner
-          .useBackCamera()
-          .then(() => {
-            this.frontCameraEnabled = false;
-            return resolve(this.frontCameraEnabled);
-          })
-          .catch(err => {
-            this.logger.error('Scan Provider Error (useBackCamera)', err);
-            return reject(err);
-          });
-      } else {
-        this.qrScanner
           .useFrontCamera()
           .then(() => {
             this.frontCameraEnabled = true;
@@ -308,6 +297,35 @@ export class ScanProvider {
             this.logger.error('Scan Provider Error (useFrontCamera)', err);
             return reject(err);
           });
+          /* .useBackCamera()
+          .then(() => {
+            this.frontCameraEnabled = false;
+            return resolve(this.frontCameraEnabled);
+          })
+          .catch(err => {
+            this.logger.error('Scan Provider Error (useBackCamera)', err);
+            return reject(err);
+          }); */
+      } else {
+        this.qrScanner
+          .useBackCamera()
+          .then(() => {
+            this.frontCameraEnabled = false;
+            return resolve(this.frontCameraEnabled);
+          })
+          .catch(err => {
+            this.logger.error('Scan Provider Error (useBackCamera)', err);
+            return reject(err);
+          });
+          /* .useFrontCamera()
+          .then(() => {
+            this.frontCameraEnabled = true;
+            return resolve(this.frontCameraEnabled);
+          })
+          .catch(err => {
+            this.logger.error('Scan Provider Error (useFrontCamera)', err);
+            return reject(err);
+          }); */
       }
     });
   }
