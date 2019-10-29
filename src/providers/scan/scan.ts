@@ -286,27 +286,17 @@ export class ScanProvider {
   public toggleCamera(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Toggling camera...');
-      if (this.frontCameraEnabled) {
-        this.qrScanner
-          .useFrontCamera()
-          .then(() => {
-            this.frontCameraEnabled = true;
-            return resolve(this.frontCameraEnabled);
-          })
-          .catch(err => {
-            this.logger.error('Scan Provider Error (useFrontCamera)', err);
-            return reject(err);
-          });
-          /* .useBackCamera()
-          .then(() => {
-            this.frontCameraEnabled = false;
-            return resolve(this.frontCameraEnabled);
-          })
-          .catch(err => {
-            this.logger.error('Scan Provider Error (useBackCamera)', err);
-            return reject(err);
-          }); */
-      } else {
+      this.qrScanner
+        .useBackCamera()
+        .then(() => {
+          this.frontCameraEnabled = false;
+          return resolve(this.frontCameraEnabled);
+        })
+        .catch(err => {
+          this.logger.error('Scan Provider Error (useBackCamera)', err);
+          return reject(err);
+        });
+      /* if (this.frontCameraEnabled) {
         this.qrScanner
           .useBackCamera()
           .then(() => {
@@ -317,7 +307,9 @@ export class ScanProvider {
             this.logger.error('Scan Provider Error (useBackCamera)', err);
             return reject(err);
           });
-          /* .useFrontCamera()
+      } else {
+        this.qrScanner
+          .useFrontCamera()
           .then(() => {
             this.frontCameraEnabled = true;
             return resolve(this.frontCameraEnabled);
@@ -325,8 +317,8 @@ export class ScanProvider {
           .catch(err => {
             this.logger.error('Scan Provider Error (useFrontCamera)', err);
             return reject(err);
-          }); */
-      }
+          });
+      } */
     });
   }
 
